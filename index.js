@@ -84,7 +84,7 @@ async function starts() {
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
-				teks = `[ BEM VINDO AO GRUPO ${mdata.subject}* ] \n___________________________\n@${num.split('@')[0]} !! \n *___________________________*\nNÃO DESRESPEITE NENHUMA REGRA PARA NÃO SER REMOVIDO ATOA!!`
+				teks = `[ Opa, Seja bem vindo(a) ao grupo ${mdata.subject}* ] \n___________________________\n@${num.split('@')[0]} !! \n *___________________________*\nLeia as Regras para evitar seu banimento.`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			} else if (anu.action == 'remove') {
@@ -94,7 +94,7 @@ async function starts() {
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
-				teks = `XAU, NÃO FOI UM PRAZER TER VC NESTE GRUPO... @${num.split('@')[0]}😔✌* \n_QUALQUER COISA MAMA O ADMIRO PRA VOLTAR ͡° ͜ʖ ͡°_`
+				teks = `O usuário @${num.split('@')[0]}Saiu do grupo.`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			}
