@@ -84,7 +84,7 @@ async function starts() {
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
-				teks = `[ BEM VINDO AO GRUPO ${mdata.subject}* ] \n___________________________\n@${num.split('@')[0]} INTRO!! \nNOME : \nNÚMERO : \nLEU AS REGRAS? : \nQUANTOS ANOS? : \nSABE CHAMAR O BOT?: \nVAI MAMAR O ADMIRO PRA GANHAR ADM? \nINSTAGRAN ? \nSALVA O NÚMERO DOS ADMS AE KARAY E AVISA NO PV! \n *___________________________*\nNÃO DESRESPEITE NENHUMA REGRAS!!`
+				teks = `[ BEM VINDO AO GRUPO ${mdata.subject}* ] \n___________________________\n@${num.split('@')[0]} !! \n *___________________________*\nNÃO DESRESPEITE NENHUMA REGRA PARA NÃO SER REMOVIDO ATOA!!`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			} else if (anu.action == 'remove') {
@@ -239,7 +239,7 @@ async function starts() {
 					}
 					break
 				case 'stiker':
-				case 'sticker':
+				case 'figurinha':
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						const media = await client.downloadAndSaveMediaMessage(encmedia)
@@ -423,7 +423,7 @@ async function starts() {
 						fs.unlinkSync(rano)
 					})
 					break
-				case 'tagall':
+				case 'chamada':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					members_id = []
@@ -497,7 +497,7 @@ async function starts() {
 						mentions(from, mentioned, true)
 						client.groupRemove(from, mentioned)
 					} else {
-						mentions(`Berhasil Promote @${mentioned[0].split('@')[0]} Sebagai Admin Group!`, mentioned, true)
+						mentions(`O usuário @${mentioned[0].split('@')[0]} foi promovido a Administrador!`, mentioned, true)
 						client.groupMakeAdmin(from, mentioned)
 					}
 					break
@@ -515,7 +515,7 @@ async function starts() {
 						mentions(teks, mentioned, true)
 						client.groupRemove(from, mentioned)
 					} else {
-						mentions(`𝗥𝗘𝗠𝗢𝗩𝗜 𝗢 @${mentioned[0].split('@')[0]} 𝗗𝗢 𝗚𝗥𝗨𝗣𝗢, 𝗘𝗟𝗘 𝗙𝗔𝗟𝗛𝗢𝗨 𝗡𝗔 𝗠𝗜𝗦𝗦𝗔𝗢 𝗗𝗘 𝗥𝗘𝗦𝗣𝗘𝗜𝗧𝗔𝗥 𝗔𝗦 𝗥𝗘𝗚𝗥𝗔𝗦!`, mentioned, true)
+						mentions(`O usuário @${mentioned[0].split('@')[0]} não é mais um Administrador!`, mentioned, true)
 						client.groupDemoteAdmin(from, mentioned)
 					}
 					break
@@ -547,7 +547,7 @@ async function starts() {
 						mentions(teks, mentioned, true)
 						client.groupRemove(from, mentioned)
 					} else {
-						mentions(`Perintah di terima, mengeluarkan : @${mentioned[0].split('@')[0]}`, mentioned, true)
+						mentions(`Usuário removido do grupo: @${mentioned[0].split('@')[0]}`, mentioned, true)
 						client.groupRemove(from, mentioned)
 					}
 					break
