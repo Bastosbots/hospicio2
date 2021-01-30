@@ -9,7 +9,6 @@ const help = (prefix) => {
 ┃⊱❥ PREFIX : 「 ${prefix} 」
 ┃⊱❥ VERSÃO : 1.0
 ┃⊱❥ CRIADOR: wa.me/5569985001678
-┃⊱❥ GRUPO: https://chat.whatsapp.com/IHfD9sLfyc4HyE5pXApl4R
 ┣━━━━━━━━━━━━━━━━━━━━┛
 ┃ 🌀𝑴𝒆𝒏𝒖 𝑺𝑰𝑴𝑷𝑳𝑬S🌀
 ┣━━━━━━━━━━━━━━━━━━━━┓
